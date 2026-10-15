@@ -1,34 +1,135 @@
-body {
+/* ==========================================================================
+   RIUL - Estilos Globales (Corte 2)
+   ========================================================================== */
 
-    font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        sans-serif;
+:root {
+    --primary-color: #333333;
+    --secondary-color: #f5f5f5;
+    --border-color: #d0d0d0;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --accent-red: #b71c1c;
+    --accent-green: #2e7d32;
+    --radius: 8px;
 }
 
-
-/*
- * Mejoramos el comportamiento visual
- * de los campos cuando reciben foco.
- */
-
-input:focus,
-textarea:focus {
-
-    outline: none;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(79, 70, 229, 0.3);
+* {
+    box-sizing: border-box;
 }
 
+body.dashboard-body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: var(--text-main);
+}
 
-/*
- * Eliminamos espacios entre celdas.
- */
+/* Navbar Global */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-table {
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-    border-collapse: collapse;
+.logo-box {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.brand-title {
+    font-size: 15px;
+    color: var(--text-main);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Contenedores Principales */
+.main-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.auth-container.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px);
+}
+
+/* Tarjetas y Cajas de Contenido */
+.content-box, .login-card-box {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+/* Botones Estándar */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #444444;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Layouts en Grid para Detalles y Perfiles */
+.details-grid-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .details-grid-layout {
+        grid-template-columns: 1fr;
+    }
 }

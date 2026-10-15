@@ -1,107 +1,77 @@
-const api = axios.create({
+/* ==========================================================================
+   RIUL - Capa de Servicios API (api.js)
+   Manejo de peticiones asíncronas Fetch para Flask (Corte 2)
+   ========================================================================== */
 
-    /*
-     * Todas las solicitudes tendrán
-     * automáticamente este prefijo.
+const API = {
+    /**
+     * Realiza una petición GET genérica
+     * @param {string} endpoint - Ruta de la API o endpoint de Flask
      */
-
-    baseURL: "/api",
-
-    headers: {
-
-        "Content-Type":
-            "application/json"
-    }
-});
-
-
-/*
- * ============================================================
- * REQUEST INTERCEPTOR
- * ============================================================
- *
- * Antes de enviar una solicitud:
- *
- * 1. Buscamos el JWT.
- * 2. Lo obtenemos desde localStorage.
- * 3. Lo agregamos al header Authorization.
- *
- * Resultado:
- *
- * Authorization: Bearer TOKEN
- */
-
-api.interceptors.request.use(
-
-    function (config) {
-
-        const token =
-            localStorage.getItem(
-                "access_token"
-            );
-
-
-        if (token) {
-
-            config.headers.Authorization =
-                `Bearer ${token}`;
+    async get(endpoint) {
+        try {
+            const response = await fetch(endpoint, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error('API GET Error:', error);
+            throw error;
         }
-
-
-        return config;
     },
 
-
-    function (error) {
-
-        return Promise.reject(
-            error
-        );
-    }
-);
-
-
-/*
- * ============================================================
- * RESPONSE INTERCEPTOR
- * ============================================================
- *
- * Si Flask devuelve 401:
- *
- * significa que el token no es válido
- * o ya expiró.
- */
-
-api.interceptors.response.use(
-
-    function (response) {
-
-        return response;
+    /**
+     * Realiza una petición POST enviando datos JSON
+     * @param {string} endpoint - Ruta de la API o endpoint de Flask
+     * @param {Object} data - Objeto con los datos a enviar
+     */
+    async post(endpoint, data) {
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify(data)
+            });
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error('API POST Error:', error);
+            throw error;
+        }
     },
 
-
-    function (error) {
-
-        if (
-            error.response &&
-            error.response.status === 401
-        ) {
-
-            localStorage.removeItem(
-                "access_token"
-            );
-
-            localStorage.removeItem(
-                "user"
-            );
-
-
-            window.location.reload();
+    /**
+     * Envía formularios con archivos adjuntos (FormData) como PDFs o imágenes
+     * Ideal para crear convocatorias institucionales o registrar evidencias
+     * @param {string} endpoint - Ruta de la API o endpoint de Flask
+     * @param {FormData} formData - Instancia de FormData con campos y archivos
+     */
+    async postFormData(endpoint, formData) {
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                    // Nota: No se define 'Content-Type' manualmente para que el navegador asigne el boundary multipart/form-data correcto
+                },
+                body: formData
+            });
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error('API PostFormData Error:', error);
+            throw error;
         }
-
-
-        return Promise.reject(
-            error
-        );
     }
-);
+};
+
+// Exportar globalmente para consumo en vistas o app.js
+window.RIUL_API = API;
