@@ -1,8 +1,14 @@
-from app.models.user import User
-from app.models.product import Product
-
-
-__all__ = [
-    "User",
-    "Product"
-]
+from app.models.usuario import Usuario
+from app.models.facultad import Facultad
+from app.models.programa_academico import ProgramaAcademico
+from app.models.semillero import Semillero
+from app.models.proyecto import Proyecto
+from app.models.insignia import Insignia
+from app.models.usuario_insignia import UsuarioInsignia
+from app.models.integrante_semillero import IntegranteSemillero
+from app.models.publicacion import Publicacion
+from app.models.autor_publicacion import AutorPublicacion
+from app.models.comentario_feed import ComentarioFeed
+from app.models.convocatoria import Convocatoria
+from app.models.solicitud_vinculacion import SolicitudVinculacion
+from app.models.logro_evidencia import LogroEvidencia
