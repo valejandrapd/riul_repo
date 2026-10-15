@@ -4,8 +4,8 @@ from flask_jwt_extended import JWTManager
 from app.config import Config
 from app.extensions import db
 
+# Importamos las rutas (Blueprints) de RIUL
 from app.routes.auth_routes import auth_bp
-from app.routes.product_routes import product_bp
 from app.routes.web_routes import web_bp
 
 
@@ -23,23 +23,19 @@ def create_app():
 
     JWTManager(app)
 
-    app.register_blueprint(web_bp)
+    # Registro de Blueprints / Rutas
+    app.register_blueprint(web_bp)  # Rutas HTML (login, dashboards)
 
     app.register_blueprint(
         auth_bp,
         url_prefix="/api/auth"
     )
 
-    app.register_blueprint(
-        product_bp,
-        url_prefix="/api/products"
-    )
-
     with app.app_context():
-
+        # Importamos todos los modelos para que SQLAlchemy reconozca las tablas de RIUL
         from app.models.user import User
-        from app.models.product import Product
+        # Aquamas adelante importaremos los modelos de RIUL (Semillero, Proyecto, Insignia, etc.)
 
-        db.create_all()
+        # db.create_all()  # Opcional, ya que los scripts schema.sql y seed.sql en Docker crean todo en MySQL
 
     return app
