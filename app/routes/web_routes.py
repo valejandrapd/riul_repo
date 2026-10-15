@@ -1,22 +1,11 @@
-from flask import (
-    Blueprint,
-    render_template
-)
+from flask import Blueprint, render_template
 
+web_bp = Blueprint('web_bp', __name__)
 
-web_bp = Blueprint(
-    "web",
-    __name__
-)
-
-
-@web_bp.get("/")
+@web_bp.route('/')
 def index():
+    return render_template('login.html')
 
-    """
-    Página principal.
-    """
-
-    return render_template(
-        "index.html"
-    )
+@web_bp.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
