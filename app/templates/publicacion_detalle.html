@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Detalle de Publicación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Publicaciones / Detalle / Navegación /</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-outline-danger">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Cabecera de la Publicación -->
+        <section class="project-hero-card">
+            <div class="project-hero-info">
+                <div class="badge-group">
+                    <span class="status-badge">[TIPO]</span> 
+                    <span class="status-badge">[AÑO]</span>
+                    <span class="status-badge">[SEMILLERO]</span>
+                </div>
+                <h1>Título completo de la publicación académica</h1>
+                <p class="hero-desc">Autores<br>Revista / Evento<br>DOI: 10.xxxx/xxxxx</p>
+            </div>
+        </section>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Resumen, Palabras Clave y Cita -->
+            <div class="details-left-column">
+                <!-- Resumen / Abstract -->
+                <section class="content-box">
+                    <h3>Resumen / Abstract</h3>
+                    <p class="box-text">Resumen de la Investigación...</p>
+                </section>
+
+                <!-- Palabras Clave -->
+                <section class="content-box">
+                    <h3>Palabras Clave</h3>
+                    <p class="box-text">[keyword] [keyword] [keyword] [keyword]</p>
+                </section>
+
+                <!-- Cómo Citar (APA 7) -->
+                <section class="content-box">
+                    <h3>Cómo Citar (APA 7)</h3>
+                    <div class="list-card">
+                        <p class="list-sub">Referencia bibliográfica / DOI</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Acceso e Información Bibliográfica -->
+            <div class="details-right-column">
+                <!-- Acceder al documento -->
+                <section class="content-box join-box">
+                    <h3>Acceder al documento</h3>
+                    <p class="box-text">Inicia sesión para descargar.</p>
+                    <a href="#" class="btn-primary-block">Iniciar Sesión para Descargar</a>
+                </section>
+
+                <!-- Información Bibliográfica -->
+                <section class="content-box">
+                    <h3>Información Bibliográfica</h3>
+                    <ul class="info-list">
+                        <li><strong>Tipo</strong> [valor]</li>
+                        <li><strong>Año</strong> [valor]</li>
+                        <li><strong>Revista / Evento</strong> [valor]</li>
+                        <li><strong>Semillero</strong> [valor]</li>
+                        <li><strong>Facultad</strong> [valor]</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

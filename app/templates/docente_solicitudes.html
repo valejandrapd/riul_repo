@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Dashboard Docente / Solicitudes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Dashboard Docente</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Publicar en feed</a>
+            <a href="#" class="btn-secondary">Mis Semilleros</a>
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Tarjeta de Información del Semillero del Docente -->
+        <section class="semillero-header-card" style="margin-bottom: 20px;">
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div class="semillero-logo-box" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; border-radius: 8px;">[LOGO]</div>
+                <div>
+                    <h2 style="font-size: 20px; margin-bottom: 4px;">Semillero BioInnovaTech</h2>
+                    <p class="semillero-tags" style="font-size: 13px; color: #555; margin-bottom: 6px;">Biotecnología Aplicada • Facultad de Ingeniería • ⭐⭐⭐⭐⭐</p>
+                    <p style="font-size: 12px; color: #666; margin: 0;">12 Integrantes • 2 Proyectos • 1.240 XP • Nivel 4</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pestañas de Navegación Interna del Docente -->
+        <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+            <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Solicitudes de Vinculación</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Proyectos y Tareas</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Bandeja de Evidencias</a>
+        </div>
+
+        <!-- Bandeja de Solicitudes de Vinculación -->
+        <section class="content-box">
+            <h3 style="margin-bottom: 15px; font-size: 18px;">Bandeja de Solicitudes de Vinculación</h3>
+            
+            <div class="table-responsive">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #e0e0e0; color: #555;">
+                            <th style="padding: 10px;">Estudiante</th>
+                            <th style="padding: 10px;">Programa</th>
+                            <th style="padding: 10px;">Promedio</th>
+                            <th style="padding: 10px;">Carta</th>
+                            <th style="padding: 10px;">Estado</th>
+                            <th style="padding: 10px; text-align: center;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px;"><strong>Nombre estudiante</strong></td>
+                            <td style="padding: 12px 10px;">Programa</td>
+                            <td style="padding: 12px 10px;">4.2</td>
+                            <td style="padding: 12px 10px;"><a href="#" style="color: #1976d2; text-decoration: underline;">Ver carta</a></td>
+                            <td style="padding: 12px 10px;"><span style="background: #fff8e1; color: #f57f17; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold;">Pendiente</span></td>
+                            <td style="padding: 12px 10px; text-align: center;">
+                                <div style="display: flex; gap: 8px; justify-content: center;">
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #e8f5e9; color: #2e7d32; border-color: #a5d6a7;">Aprobar</a>
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #ffebee; color: #c62828; border-color: #ef9a9a;">Rechazar</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px;"><strong>Nombre estudiante</strong></td>
+                            <td style="padding: 12px 10px;">Programa</td>
+                            <td style="padding: 12px 10px;">4.2</td>
+                            <td style="padding: 12px 10px;"><a href="#" style="color: #1976d2; text-decoration: underline;">Ver carta</a></td>
+                            <td style="padding: 12px 10px;"><span style="background: #fff8e1; color: #f57f17; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold;">Pendiente</span></td>
+                            <td style="padding: 12px 10px; text-align: center;">
+                                <div style="display: flex; gap: 8px; justify-content: center;">
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #e8f5e9; color: #2e7d32; border-color: #a5d6a7;">Aprobar</a>
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #ffebee; color: #c62828; border-color: #ef9a9a;">Rechazar</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px;"><strong>Nombre estudiante</strong></td>
+                            <td style="padding: 12px 10px;">Programa</td>
+                            <td style="padding: 12px 10px;">4.2</td>
+                            <td style="padding: 12px 10px;"><a href="#" style="color: #1976d2; text-decoration: underline;">Ver carta</a></td>
+                            <td style="padding: 12px 10px;"><span style="background: #fff8e1; color: #f57f17; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold;">Pendiente</span></td>
+                            <td style="padding: 12px 10px; text-align: center;">
+                                <div style="display: flex; gap: 8px; justify-content: center;">
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #e8f5e9; color: #2e7d32; border-color: #a5d6a7;">Aprobar</a>
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #ffebee; color: #c62828; border-color: #ef9a9a;">Rechazar</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px;"><strong>Nombre estudiante</strong></td>
+                            <td style="padding: 12px 10px;">Programa</td>
+                            <td style="padding: 12px 10px;">4.2</td>
+                            <td style="padding: 12px 10px;"><a href="#" style="color: #1976d2; text-decoration: underline;">Ver carta</a></td>
+                            <td style="padding: 12px 10px;"><span style="background: #fff8e1; color: #f57f17; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold;">Pendiente</span></td>
+                            <td style="padding: 12px 10px; text-align: center;">
+                                <div style="display: flex; gap: 8px; justify-content: center;">
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #e8f5e9; color: #2e7d32; border-color: #a5d6a7;">Aprobar</a>
+                                    <a href="#" class="btn-secondary" style="padding: 4px 10px; font-size: 11px; background-color: #ffebee; color: #c62828; border-color: #ef9a9a;">Rechazar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

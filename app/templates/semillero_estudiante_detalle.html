@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Ficha de Semillero Estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Catálogo / BioInnovaTech</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Catálogo</a>
+            
+            <!-- Componente de Notificaciones en Partials -->
+            <div class="notification-wrapper">
+                <button class="notification-icon-btn" onclick="toggleNotifications()">🔔</button>
+                {% include 'partials/_notifications.html' %}
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Cabecera del Semillero con Botón de Solicitud -->
+        <section class="semillero-header-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div class="semillero-logo-box">[LOGO]</div>
+                <div>
+                    <h1 style="font-size: 24px; margin-bottom: 4px;">BioInnovaTech</h1>
+                    <p class="semillero-tags">Avanzado • Biotecnología Aplicada • Ingeniería</p>
+                    <div style="display: flex; gap: 15px; font-size: 13px; color: #555; align-items: center; margin-top: 4px;">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>• 12 Integrantes</span>
+                        <span>• 3 proyectos</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="btn-primary" style="padding: 12px 24px; font-size: 15px; display: inline-block;">SOLICITAR VINCULACIÓN &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Sobre el Semillero, Proyectos, Publicaciones y Eventos -->
+            <div class="details-left-column">
+                <!-- Sobre el Semillero -->
+                <section class="content-box">
+                    <h3>Sobre el Semillero</h3>
+                    <p class="box-text">Descripción pública • Líder • Facultad • Área</p>
+                </section>
+
+                <!-- Proyectos de Investigación -->
+                <section class="content-box">
+                    <h3>Proyectos de Investigación</h3>
+                    <div class="list-cards">
+                        <div class="list-card">
+                            <span>Título proyecto • Estado &rarr;</span>
+                        </div>
+                        <div class="list-card">
+                            <span>Título proyecto • Estado &rarr;</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Publicaciones -->
+                <section class="content-box">
+                    <h3>Publicaciones</h3>
+                    <div class="list-cards">
+                        <div class="list-card">
+                            <span>Publicacion</span>
+                        </div>
+                        <div class="list-card">
+                            <span>Publicacion</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reconocimiento y Eventos -->
+                <section class="content-box">
+                    <h3>Reconocimiento y Eventos</h3>
+                    <div class="list-cards">
+                        <div class="list-card">
+                            <span>Reconocimiento o Evento</span>
+                        </div>
+                        <div class="list-card">
+                            <span>Reconocimiento o Evento</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Equipo de Investigación e Información General -->
+            <div class="details-right-column">
+                <!-- Equipo de Investigación -->
+                <section class="content-box">
+                    <h3>Equipo de Investigación</h3>
+                    <ul class="team-list">
+                        <li>○ Nombre • Rol • +XP</li>
+                        <li>○ Nombre • Rol • +XP</li>
+                        <li>○ Nombre • Rol • +XP</li>
+                        <li>○ Nombre • Rol • +XP</li>
+                    </ul>
+                </section>
+
+                <!-- Información General -->
+                <section class="content-box">
+                    <h3>Información General</h3>
+                    <ul class="info-list">
+                        <li><strong>Nivel</strong> [valor]</li>
+                        <li><strong>Integrantes</strong> [valor]</li>
+                        <li><strong>Docente líder</strong> [valor]</li>
+                        <li><strong>Facultad</strong> [valor]</li>
+                        <li><strong>Estado</strong> [valor]</li>
+                        <li><strong>Compatibilidad</strong> [valor]</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Alternar el menú desplegable de notificaciones
+        function toggleNotifications() {
+            const dropdown = document.getElementById('notificationsDropdown');
+            if (dropdown) {
+                dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

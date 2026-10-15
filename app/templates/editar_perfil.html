@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Editar Perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Mi Perfil</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary" style="padding: 6px 14px; font-size: 13px; text-decoration: none;">← Volver</a>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 30px 20px;">
+        <!-- Modal / Contenedor Editar Perfil -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 750px; width: 100%; text-align: left;">
+            <div class="form-header-title" style="margin-bottom: 20px;">
+                <h2 style="font-size: 22px; font-weight: bold; margin: 0;">Editar Perfil</h2>
+            </div>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <!-- Foto de Perfil -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 13px; font-weight: bold; margin-bottom: 8px; display: block;">Foto de Perfil</label>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 65px; height: 65px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #666;">[Foto]</div>
+                        <div>
+                            <input type="file" id="foto_perfil" name="foto_perfil" style="display: none;" onchange="updateProfileFileName(this)">
+                            <label for="foto_perfil" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; cursor: pointer; display: inline-block; font-weight: normal; margin: 0;">Seleccionar foto</label>
+                            <p id="profile-file-label" style="font-size: 11px; color: #666; margin: 4px 0 0 0;"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Datos institucionales (no editables) -->
+                <div class="form-group" style="margin-bottom: 18px;">
+                    <label style="font-size: 13px; font-weight: bold; margin-bottom: 6px; display: block;">Datos institucionales (no editables)</label>
+                    <div style="border: 1px solid #e0e0e0; background-color: #f5f5f5; border-radius: 6px; padding: 12px; font-size: 13px; color: #666;">
+                        Nombre • Correo • Programa • Facultad
+                    </div>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="form-group" style="margin-bottom: 18px;">
+                    <label for="telefono" style="font-size: 13px; font-weight: bold; margin-bottom: 6px; display: block;">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" placeholder="[ campo teléfono ]" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Biografía -->
+                <div class="form-group" style="margin-bottom: 18px;">
+                    <label for="biografia" style="font-size: 13px; font-weight: bold; margin-bottom: 6px; display: block;">Biografía</label>
+                    <textarea id="biografia" name="biografia" rows="4" placeholder="[ escribe tu biografía o resumen profesional... ]" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; resize: vertical;"></textarea>
+                </div>
+
+                <!-- Perfiles académicos y redes -->
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="redes" style="font-size: 13px; font-weight: bold; margin-bottom: 6px; display: block;">Perfiles académicos y redes</label>
+                    <input type="text" id="redes" name="redes" placeholder="[ GitHub, LinkedIn, ORCID, etc. ]" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Botones de Acción -->
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 25px;">
+                    <a href="#" class="btn-secondary" style="flex: 1; padding: 10px; font-size: 13px; text-decoration: none; text-align: center;">Cancelar</a>
+                    <button type="submit" class="btn-primary-block" style="flex: 1; margin-top: 0; padding: 10px; font-size: 13px; text-align: center; background-color: #fff; border: 1px solid #ccc; color: #333; font-weight: bold; cursor: pointer;">Guardar Cambios</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Mostrar nombre del archivo de foto seleccionado
+        function updateProfileFileName(input) {
+            const label = document.getElementById('profile-file-label');
+            if (input.files && input.files[0]) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>

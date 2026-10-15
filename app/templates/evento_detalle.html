@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Detalle de Evento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Eventos / Detalle / Navegación /</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-outline-danger">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Cabecera del Evento -->
+        <section class="project-hero-card">
+            <div class="project-hero-info">
+                <div class="badge-group">
+                    <span class="status-badge">[MODALIDAD]</span> 
+                    <span class="line-badge">[CONVOCATORIA ABIERTA]</span>
+                </div>
+                <h1>Congreso Nacional de Semilleros REDCOLSI 2025</h1>
+                <p class="hero-desc">Fecha - Hora Lugar</p>
+            </div>
+        </section>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Sobre el Evento y Programa -->
+            <div class="details-left-column">
+                <!-- Sobre el Evento -->
+                <section class="content-box">
+                    <h3>Sobre el Evento</h3>
+                    <p class="box-text">Descripción general del evento...</p>
+                </section>
+
+                <!-- Programa del Evento -->
+                <section class="content-box">
+                    <h3>Programa del Evento</h3>
+                    <ul class="milestone-list">
+                        <li><span>08:00 - Actividad / sesión del evento</span></li>
+                        <li><span>08:00 - Actividad / sesión del evento</span></li>
+                        <li><span>08:00 - Actividad / sesión del evento</span></li>
+                        <li><span>08:00 - Actividad / sesión del evento</span></li>
+                        <li><span>08:00 - Actividad / sesión del evento</span></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Inscripción y Detalles -->
+            <div class="details-right-column">
+                <!-- Tarjeta de Inscripción -->
+                <section class="content-box join-box">
+                    <h3>INSCRIPCIÓN ABIERTA</h3>
+                    <p class="box-text"><strong>Gratuito</strong></p>
+                    <a href="#" class="btn-primary-block">Inscribirse al Evento</a>
+                </section>
+
+                <!-- Detalles del Evento -->
+                <section class="content-box">
+                    <h3>Detalles del Evento</h3>
+                    <ul class="info-list">
+                        <li><strong>Fecha</strong> [valor]</li>
+                        <li><strong>Hora</strong> [valor]</li>
+                        <li><strong>Lugar</strong> [valor]</li>
+                        <li><strong>Modalidad</strong> [valor]</li>
+                        <li><strong>Certificado</strong> [valor]</li>
+                        <li><strong>Cupos</strong> [valor]</li>
+                    </ul>
+                </section>
+
+                <!-- Segunda Tarjeta de Inscripción (según el boceto) -->
+                <section class="content-box join-box">
+                    <h3>INSCRIPCIÓN ABIERTA</h3>
+                    <p class="box-text"><strong>Gratuito</strong></p>
+                    <a href="#" class="btn-primary-block">Inscribirse al Evento</a>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

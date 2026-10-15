@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Detalle de Semillero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Semilleros / BioInnovaTech / Navegación /</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-outline-danger">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Cabecera del Semillero -->
+        <section class="semillero-header-card">
+            <div class="semillero-logo-box">[LOGO]</div>
+            <div class="semillero-main-info">
+                <h1>BioInnovaTech</h1>
+                <p class="semillero-tags">Avanzado • Biotecnología Aplicada • Facultad de Ingeniería</p>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="semillero-stats-inline">
+                <span><strong>12</strong> Integrantes</span>
+                <span><strong>3</strong> Proyectos</span>
+                <span><strong>2</strong> Publicaciones</span>
+            </div>
+        </section>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Información, Proyectos y Publicaciones -->
+            <div class="details-left-column">
+                <!-- Sobre el Semillero -->
+                <section class="content-box">
+                    <h3>Sobre el Semillero</h3>
+                    <p class="box-text">Descripción del semillero y contexto institucional.</p>
+                    <p class="box-meta"><strong>Líder:</strong> Docente • <strong>Facultad:</strong> Ingeniería • <strong>Área:</strong> Biotecnología</p>
+                </section>
+
+                <!-- Proyectos de Investigación -->
+                <section class="content-box">
+                    <h3>Proyectos de Investigación</h3>
+                    <div class="list-cards">
+                        <div class="list-card">
+                            <span class="status-badge">[EN EJECUCIÓN]</span> <strong>Título proyecto • Estado &rarr;</strong>
+                        </div>
+                        <div class="list-card">
+                            <span class="status-badge">[FORMULACIÓN]</span> <strong>Título proyecto • Estado &rarr;</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Publicaciones -->
+                <section class="content-box">
+                    <h3>Publicaciones</h3>
+                    <div class="list-cards">
+                        <div class="list-card">
+                            <span class="status-badge">[ARTÍCULO]</span> <strong>Título publicacion • Estado &rarr;</strong>
+                        </div>
+                        <div class="list-card">
+                            <span class="status-badge">[PONENCIA]</span> <strong>Título publicacion • Estado &rarr;</strong>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Unirse y Equipo -->
+            <div class="details-right-column">
+                <!-- Tarjeta de Solicitud de Vinculación -->
+                <section class="content-box join-box">
+                    <h3>¿Quieres unirte?</h3>
+                    <p>Solicita vinculación con correo Institucional</p>
+                    <a href="{{ url_for('web_bp.login') }}" class="btn-primary-block">Iniciar Sesión para Solicitar</a>
+                </section>
+
+                <!-- Equipo de Investigación -->
+                <section class="content-box">
+                    <h3>Equipo de Investigación</h3>
+                    <ul class="team-list">
+                        <li>🔵 Investigador / Rol / XP</li>
+                        <li>🔵 Investigador / Rol / XP</li>
+                        <li>🔵 Investigador / Rol / XP</li>
+                        <li>🔵 Investigador / Rol / XP</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

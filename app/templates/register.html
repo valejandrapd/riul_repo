@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Crear Cuenta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="auth-body">
+    <!-- Cabecera de Autenticación -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> — Autenticación</span>
+        </div>
+        <div class="nav-actions">
+            <a href="{{ url_for('web_bp.index') }}" class="btn-secondary">&larr; Volver al Feed</a>
+        </div>
+    </header>
+
+    <main class="auth-container centered">
+        <!-- Tarjeta de Creación de Cuenta -->
+        <section class="login-card-box register-card-box">
+            <div class="auth-tabs">
+                <a href="{{ url_for('web_bp.login') }}" class="tab-item inactive">Iniciar Sesión</a>
+                <span class="tab-item active">Crear Cuenta</span>
+            </div>
+
+            <div class="form-header-title">
+                <h3>Crear cuenta</h3>
+                <p>Únete a la comunidad investigadora Unilibre</p>
+            </div>
+
+            <form action="{{ url_for('auth_bp.register') }}" method="POST">
+                <div class="form-group">
+                    <label for="nombre_completo">Nombre Completo</label>
+                    <input type="text" id="nombre_completo" name="nombre_completo" placeholder="[ campo de entrada ]" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo_documento">Tipo Doc. + Nº Documento</label>
+                    <input type="text" id="tipo_documento" name="tipo_documento" placeholder="[ campo de entrada ]" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Institucional</label>
+                    <input type="email" id="correo" name="correo" placeholder="[ campo de entrada ]" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="facultad">Facultad ▾</label>
+                    <select id="facultad" name="facultad" required class="form-select">
+                        <option value="" disabled selected>[ campo de entrada ]</option>
+                        <option value="1">Ingeniería</option>
+                        <option value="2">Derecho</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="programa">Programa Académico ▾</label>
+                    <select id="programa" name="programa" required class="form-select">
+                        <option value="" disabled selected>[ campo de entrada ]</option>
+                        <option value="1">Ingeniería de Sistemas</option>
+                        <option value="2">Ingeniería Industrial</option>
+                        <option value="3">Derecho</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="[ campo de entrada ]" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmar_contrasena">Confirmar Contraseña</label>
+                    <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="[ campo de entrada ]" required>
+                </div>
+
+                <button type="submit" class="btn-primary-block">Crear Cuenta</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

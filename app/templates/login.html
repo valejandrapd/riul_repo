@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Autenticación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="auth-body">
+    <!-- Cabecera de Autenticación -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> — Autenticación</span>
+        </div>
+        <div class="nav-actions">
+            <a href="{{ url_for('main.index') }}" class="btn-secondary">&larr; Volver al Feed</a>
+        </div>
+    </header>
+
+    <main class="auth-container centered">
+        <!-- Tarjeta de Inicio de Sesión / Registro -->
+        <section class="login-card-box">
+            <div class="auth-tabs">
+                <span class="tab-item active">Iniciar Sesión</span>
+                <span class="tab-item inactive">Crear Cuenta</span>
+            </div>
+
+            <form action="{{ url_for('main.login') }}" method="POST">
+                <div class="form-group">
+                    <label for="correo">Correo Institucional</label>
+                    <input type="email" id="correo" name="correo" placeholder="nombre@unilibre.edu.co" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-flex">
+                        <label for="contrasena">Contraseña</label>
+                        <a href="#" class="forgot-link">Olvidé mi contraseña</a>
+                    </div>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="********" required>
+                </div>
+
+                <button type="submit" class="btn-primary-block">Iniciar Sesión</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

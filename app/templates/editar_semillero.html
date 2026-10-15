@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Editar Semillero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Mis Semilleros</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Publicar en feed</a>
+            <a href="#" class="btn-secondary" style="font-weight: bold;">Mis Semilleros</a>
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 30px 20px;">
+        <!-- Modal / Contenedor Editar Semillero -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 750px; width: 100%;">
+            <div class="form-header-title">
+                <h2 style="font-size: 22px; font-weight: bold; margin-bottom: 20px;">Editar Semillero — BioInnovaTech</h2>
+            </div>
+
+            <form action="#" method="POST">
+                <!-- Selector de Ícono / Logo -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 13px; font-weight: bold; margin-bottom: 8px; display: block;">Ícono / Logo</label>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <div style="width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; cursor: pointer;"></div>
+                        <div style="width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; cursor: pointer;"></div>
+                        <div style="width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; cursor: pointer;"></div>
+                        <div style="width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; cursor: pointer;"></div>
+                        <div style="width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; cursor: pointer;"></div>
+                        <div style="width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; cursor: pointer;"></div>
+                    </div>
+                </div>
+
+                <!-- Nombre del semillero -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="nombre" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Nombre del semillero</label>
+                    <input type="text" id="nombre" name="nombre" value="BioInnovaTech" required style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Área / Línea de Investigación -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="area" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Área / Línea de Investigación</label>
+                    <input type="text" id="area" name="area" value="Biotecnología Ambiental" required style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Facultad (solo lectura) -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="facultad" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Facultad (solo lectura)</label>
+                    <input type="text" id="facultad" name="facultad" value="Facultad de Ingeniería" readonly style="width: 100%; padding: 8px 12px; border: 1px solid #e0e0e0; background-color: #f5f5f5; border-radius: 6px; font-size: 13px; color: #666;">
+                </div>
+
+                <!-- Categoría Colciencias -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="categoria" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Categoría Colciencias</label>
+                    <input type="text" id="categoria" name="categoria" value="Categoría A" style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Descripción pública -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="descripcion" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Descripción pública</label>
+                    <input type="text" id="descripcion" name="descripcion" value="Descripción breve del semillero..." style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Misión -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="mision" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Misión</label>
+                    <input type="text" id="mision" name="mision" value="Misión del semillero..." style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Visión -->
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="vision" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Visión</label>
+                    <input type="text" id="vision" name="vision" value="Visión del semillero..." style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Correo de contacto / Sitio web -->
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="contacto" style="font-size: 13px; font-weight: bold; margin-bottom: 4px; display: block;">Correo de contacto / Sitio web</label>
+                    <input type="text" id="contacto" name="contacto" value="bioinnovatech@unilibre.edu.co" style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <!-- Botones de Acción -->
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 25px;">
+                    <a href="#" class="btn-secondary" style="padding: 10px 25px; font-size: 13px; text-decoration: none; text-align: center;">Cancelar</a>
+                    <button type="submit" class="btn-secondary" style="padding: 10px 25px; font-size: 13px; font-weight: bold; background-color: #fff; cursor: pointer;">Guardar cambios públicos</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

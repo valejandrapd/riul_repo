@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Enlace Enviado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL / Autenticación</strong></span>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 40px 20px; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Modal / Contenedor Enlace Enviado -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 550px; width: 100%; text-align: center; padding: 40px 30px;">
+            <div class="form-header-title" style="margin-bottom: 25px;">
+                <h2 style="font-size: 22px; font-weight: bold; margin: 0 0 10px 0;">Enlace Enviado</h2>
+                <p style="font-size: 13px; color: #444; margin: 0; line-height: 1.5;">
+                    Revisa tu bandeja institucional. El enlace expira en 30 minutos.
+                </p>
+            </div>
+
+            <!-- Botón de Acción -->
+            <div>
+                <a href="{{ url_for('auth.login') }}" class="btn-primary" style="display: inline-block; width: 100%; padding: 10px; font-size: 13px; text-decoration: none; text-align: center; background-color: #fff; border: 1px solid #ccc; color: #333; font-weight: bold; border-radius: 6px;">Entendido</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

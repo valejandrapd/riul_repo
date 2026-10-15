@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Perfil Estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Mi Perfil</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary" style="padding: 6px 14px; font-size: 13px; text-decoration: none;">Editar</a>
+            <a href="#" class="btn-secondary" style="padding: 6px 14px; font-size: 13px; text-decoration: none;">← Volver</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Tarjeta de Cabecera del Perfil -->
+        <section class="semillero-header-card" style="margin-bottom: 25px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 25px; background: #fff;">
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                <div class="semillero-logo-box" style="width: 75px; height: 75px; border: 1px solid #ccc; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #fafafa; font-weight: bold; font-size: 20px;">M G</div>
+                <div>
+                    <h1 style="font-size: 22px; margin: 0 0 4px 0; font-weight: bold;">María García López</h1>
+                    <p style="font-size: 13px; color: #444; margin: 0 0 4px 0; font-weight: bold;">Nivel 3 - Investigadora Emergente</p>
+                    <p style="font-size: 13px; color: #555; margin: 0 0 8px 0;">Ingeniería de Sistemas • Facultad de Ingeniería</p>
+                    <p style="font-size: 13px; color: #333; margin: 0;">XP 1.340 / 2.000 <span style="color: #fbc02d;">★★★★★</span></p>
+                </div>
+            </div>
+
+            <!-- Pestañas de Navegación del Perfil -->
+            <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; border-top: 1px solid #eee; padding-top: 15px;">
+                <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Resumen</a>
+                <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Proyectos</a>
+                <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Publicaciones</a>
+                <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Historial XP</a>
+            </div>
+        </section>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Biografía y Semilleros Asociados -->
+            <div class="details-left-column" style="display: flex; flex-direction: column; gap: 20px;">
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 10px 0; font-weight: bold;">Biografía / Resumen Profesional</h3>
+                    <p style="font-size: 13px; color: #555; margin: 0; line-height: 1.5;">Texto biográfico del investigador...</p>
+                </section>
+
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 12px 0; font-weight: bold;">Semilleros Asociados</h3>
+                    <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 14px; background: #fafafa; font-size: 13px; color: #333;">
+                        BioInnovaTech • Investigadora Principal • Activo
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Información de Contacto y Perfiles Académicos -->
+            <div class="details-right-column" style="display: flex; flex-direction: column; gap: 20px;">
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 12px 0; font-weight: bold;">Información de Contacto</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #444;">
+                        <li>Campo • valor</li>
+                        <li>Campo • valor</li>
+                        <li>Campo • valor</li>
+                        <li>Campo • valor</li>
+                    </ul>
+                </section>
+
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 12px 0; font-weight: bold;">Perfiles Académicos</h3>
+                    <p style="font-size: 13px; color: #555; margin: 0;">GitHub • LinkedIn • ORCID</p>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

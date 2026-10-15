@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Admin / Bandeja de Validaciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Administrador</span>
+        </div>
+        <div class="nav-actions">
+            <span class="brand-title" style="font-size: 13px; color: #555; margin-right: 10px;">Dirección de Investigaciones</span>
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Tarjetas de Estadísticas Superiores -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 25px;">
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">Validaciones Pendientes</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">4</h2>
+            </div>
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">XP Acreditado</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">14.820</h2>
+            </div>
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">Semilleros Activos</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">47</h2>
+            </div>
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">Investigadores</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">1.240</h2>
+            </div>
+        </div>
+
+        <!-- Pestañas de Navegación del Administrador -->
+        <div style="display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Bandeja de Validaciones</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Crear Convocatoria</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Analítica y Ranking</a>
+        </div>
+
+        <!-- Listado de Validaciones Pendientes -->
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- Tarjeta de Evidencia 1 -->
+            <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 18px 20px; background: #fff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <p style="font-size: 12px; color: #666; margin: 0 0 4px 0;">[TIPO] Semillero • fecha</p>
+                    <h3 style="font-size: 16px; margin: 0 0 4px 0; font-weight: bold;">Título de evidencia</h3>
+                    <p style="font-size: 12px; color: #555; margin: 0;">Estudiante</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" class="btn-primary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Aprobar +XP</a>
+                    <a href="#" class="btn-secondary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Rechazar</a>
+                </div>
+            </section>
+
+            <!-- Tarjeta de Evidencia 2 -->
+            <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 18px 20px; background: #fff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <p style="font-size: 12px; color: #666; margin: 0 0 4px 0;">[TIPO] Semillero • fecha</p>
+                    <h3 style="font-size: 16px; margin: 0 0 4px 0; font-weight: bold;">Título de evidencia</h3>
+                    <p style="font-size: 12px; color: #555; margin: 0;">Estudiante</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" class="btn-primary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Aprobar +XP</a>
+                    <a href="#" class="btn-secondary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Rechazar</a>
+                </div>
+            </section>
+
+            <!-- Tarjeta de Evidencia 3 -->
+            <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 18px 20px; background: #fff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <p style="font-size: 12px; color: #666; margin: 0 0 4px 0;">[TIPO] Semillero • fecha</p>
+                    <h3 style="font-size: 16px; margin: 0 0 4px 0; font-weight: bold;">Título de evidencia</h3>
+                    <p style="font-size: 12px; color: #555; margin: 0;">Estudiante</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" class="btn-primary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Aprobar +XP</a>
+                    <a href="#" class="btn-secondary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Rechazar</a>
+                </div>
+            </section>
+
+            <!-- Tarjeta de Evidencia 4 -->
+            <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 18px 20px; background: #fff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <div>
+                    <p style="font-size: 12px; color: #666; margin: 0 0 4px 0;">[TIPO] Semillero • fecha</p>
+                    <h3 style="font-size: 16px; margin: 0 0 4px 0; font-weight: bold;">Título de evidencia</h3>
+                    <p style="font-size: 12px; color: #555; margin: 0;">Estudiante</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" class="btn-primary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Aprobar +XP</a>
+                    <a href="#" class="btn-secondary" style="padding: 8px 14px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Rechazar</a>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

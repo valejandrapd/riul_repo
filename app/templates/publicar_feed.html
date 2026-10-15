@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Publicar en el Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Dashboard Docente</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Publicar en feed</a>
+            <a href="#" class="btn-secondary">Mis Semilleros</a>
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 30px 20px;">
+        <!-- Modal / Contenedor Publicar en el Feed -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 700px; width: 100%;">
+            <div class="form-header-title">
+                <h2 style="font-size: 22px; font-weight: bold; margin-bottom: 20px;">Publicar en el Feed</h2>
+            </div>
+
+            <form action="#" method="POST">
+                <!-- Tipo de publicación -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 14px; font-weight: bold; margin-bottom: 8px; display: block;">Tipo de publicación</label>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <label class="btn-secondary" style="flex: 1; text-align: center; cursor: pointer; padding: 8px 12px; font-size: 13px;">
+                            <input type="radio" name="tipo_publicacion" value="Avance" checked style="display: none;">
+                            Avance
+                        </label>
+                        <label class="btn-secondary" style="flex: 1; text-align: center; cursor: pointer; padding: 8px 12px; font-size: 13px;">
+                            <input type="radio" name="tipo_publicacion" value="Logro" style="display: none;">
+                            Logro
+                        </label>
+                        <label class="btn-secondary" style="flex: 1; text-align: center; cursor: pointer; padding: 8px 12px; font-size: 13px;">
+                            <input type="radio" name="tipo_publicacion" value="Convocatoria" style="display: none;">
+                            Convocatoria
+                        </label>
+                        <label class="btn-secondary" style="flex: 1; text-align: center; cursor: pointer; padding: 8px 12px; font-size: 13px;">
+                            <input type="radio" name="tipo_publicacion" value="Noticia" style="display: none;">
+                            Noticia
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Título * -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="titulo" style="font-size: 14px; font-weight: bold; margin-bottom: 6px; display: block;">Título *</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="[ título ]" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px;">
+                </div>
+
+                <!-- Contenido * -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="contenido" style="font-size: 14px; font-weight: bold; margin-bottom: 6px; display: block;">Contenido *</label>
+                    <textarea id="contenido" name="contenido" rows="5" placeholder="[ cuerpo de publicación ]" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; resize: vertical;"></textarea>
+                </div>
+
+                <!-- Visibilidad -->
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label style="font-size: 14px; font-weight: bold; margin-bottom: 8px; display: block;">Visibilidad</label>
+                    <div style="border: 1px solid #ccc; border-radius: 6px; padding: 15px; background: #fafafa; width: 50%; min-width: 220px; display: flex; flex-direction: column; gap: 10px;">
+                        <label style="font-size: 13px; color: #333; cursor: pointer; display: flex; align-items: center; gap: 8px; margin: 0;">
+                            <input type="radio" name="visibilidad" value="Público" checked>
+                            Público
+                        </label>
+                        <label style="font-size: 13px; color: #333; cursor: pointer; display: flex; align-items: center; gap: 8px; margin: 0;">
+                            <input type="radio" name="visibilidad" value="Solo miembros">
+                            Solo miembros
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                    <button type="submit" class="btn-secondary" style="padding: 10px 24px; font-size: 13px; font-weight: bold; cursor: pointer; border: 1px solid #ccc;">Publicar Avance · Público</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

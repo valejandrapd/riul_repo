@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Dashboard Docente / Evidencias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Dashboard Docente / Evidencias</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Publicar en feed</a>
+            <a href="#" class="btn-secondary">Mis Semilleros</a>
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Encabezado de la Sección -->
+        <section class="content-box" style="margin-bottom: 25px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px;">
+            <h1 style="font-size: 22px; margin: 0 0 6px 0;">Pre-Revisión de Evidencias Estudiantiles</h1>
+            <p style="font-size: 13px; color: #666; margin: 0;">Visto bueno → Dirección | Regresar → estudiante con observaciones</p>
+        </section>
+
+        <!-- Tarjeta de Evidencia 1 -->
+        <section class="content-box" style="margin-bottom: 20px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
+                <div style="flex: 2; min-width: 250px;">
+                    <h3 style="font-size: 18px; margin: 0 0 6px 0;">Título de evidencia</h3>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Estudiante - Tipo - Fecha</p>
+                    
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="border: 1px solid #ccc; border-radius: 6px; padding: 6px 12px; background: #fafafa; font-size: 13px; display: inline-block;">
+                            📎 <a href="#" style="color: #333; text-decoration: none;">archivo.pdf</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="flex: 2; min-width: 250px;">
+                    <label for="obs_1" style="font-size: 13px; color: #555; display: block; margin-bottom: 4px;">Observaciones / Retroalimentación</label>
+                    <input type="text" id="obs_1" placeholder="Escribe observaciones..." style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: flex-end; justify-content: flex-end; flex: 1; min-width: 220px; margin-top: auto;">
+                    <a href="#" class="btn-secondary" style="padding: 8px 12px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Regresar trabajo</a>
+                    <a href="#" class="btn-primary" style="padding: 8px 12px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Visto bueno →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tarjeta de Evidencia 2 -->
+        <section class="content-box" style="margin-bottom: 20px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
+                <div style="flex: 2; min-width: 250px;">
+                    <h3 style="font-size: 18px; margin: 0 0 6px 0;">Título de evidencia</h3>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Estudiante - Tipo - Fecha</p>
+                    
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="border: 1px solid #ccc; border-radius: 6px; padding: 6px 12px; background: #fafafa; font-size: 13px; display: inline-block;">
+                            📎 <a href="#" style="color: #333; text-decoration: none;">archivo.pdf</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="flex: 2; min-width: 250px;">
+                    <label for="obs_2" style="font-size: 13px; color: #555; display: block; margin-bottom: 4px;">Observaciones / Retroalimentación</label>
+                    <input type="text" id="obs_2" placeholder="Escribe observaciones..." style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: flex-end; justify-content: flex-end; flex: 1; min-width: 220px; margin-top: auto;">
+                    <a href="#" class="btn-secondary" style="padding: 8px 12px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Regresar trabajo</a>
+                    <a href="#" class="btn-primary" style="padding: 8px 12px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Visto bueno →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tarjeta de Evidencia 3 -->
+        <section class="content-box" style="margin-bottom: 20px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
+                <div style="flex: 2; min-width: 250px;">
+                    <h3 style="font-size: 18px; margin: 0 0 6px 0;">Título de evidencia</h3>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Estudiante - Tipo - Fecha</p>
+                    
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="border: 1px solid #ccc; border-radius: 6px; padding: 6px 12px; background: #fafafa; font-size: 13px; display: inline-block;">
+                            📎 <a href="#" style="color: #333; text-decoration: none;">archivo.pdf</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="flex: 2; min-width: 250px;">
+                    <label for="obs_3" style="font-size: 13px; color: #555; display: block; margin-bottom: 4px;">Observaciones / Retroalimentación</label>
+                    <input type="text" id="obs_3" placeholder="Escribe observaciones..." style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px;">
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: flex-end; justify-content: flex-end; flex: 1; min-width: 220px; margin-top: auto;">
+                    <a href="#" class="btn-secondary" style="padding: 8px 12px; font-size: 12px; text-decoration: none; color: #c62828; border-color: #ef9a9a; background-color: #ffebee;">Regresar trabajo</a>
+                    <a href="#" class="btn-primary" style="padding: 8px 12px; font-size: 12px; text-decoration: none; background-color: #2e7d32; border-color: #2e7d32; color: white;">Visto bueno →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

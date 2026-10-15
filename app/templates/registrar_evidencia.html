@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Registrar Evidencia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Mi Dashboard</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="{{ url_for('main.index') }}" class="btn-secondary">Catálogo</a>
+            
+            <!-- Componente de Notificaciones en Partials -->
+            <div class="notification-wrapper">
+                <button class="notification-icon-btn" onclick="toggleNotifications()">🔔</button>
+                {% include 'partials/_notifications.html' %}
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container centered">
+        <!-- Tarjeta / Modal de Registrar Evidencia -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 650px; width: 100%;">
+            <div class="form-header-title">
+                <h2>Registrar Evidencia</h2>
+            </div>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <!-- Fila 1: Tipo de actividad y Semillero -->
+                <div style="display: flex; gap: 15px; margin-bottom: 18px;">
+                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                        <label for="tipo_actividad">Tipo de actividad</label>
+                        <select id="tipo_actividad" name="tipo_actividad" class="form-select" required>
+                            <option value="" disabled selected>Seleccionar tipo ▾</option>
+                            <option value="informe">Informe de Avance</option>
+                            <option value="prototipo">Prototipo / Código</option>
+                            <option value="ponencia">Ponencia / Artículo</option>
+                            <option value="taller">Asistencia a Taller</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                        <label for="semillero">Semillero</label>
+                        <select id="semillero" name="semillero" class="form-select" required>
+                            <option value="" disabled selected>Seleccionar semillero</option>
+                            <option value="1">BioInnovaTech</option>
+                            <option value="2">LexData</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Campo: Título -->
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Título del logro / actividad" required>
+                </div>
+
+                <!-- Campo: Descripción -->
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" class="form-select" style="resize: vertical;" placeholder="Describe la evidencia..." required></textarea>
+                </div>
+
+                <!-- Campo: Soporte / Archivo -->
+                <div class="form-group">
+                    <label for="soporte">Soporte / Archivo</label>
+                    <div style="border: 1px solid #ccc; border-radius: 6px; padding: 10px; text-align: center; background: #fafafa;">
+                        <input type="file" id="soporte" name="soporte" style="display: none;" onchange="updateFileName(this)">
+                        <label for="soporte" style="cursor: pointer; font-weight: normal; margin: 0; color: #555;">
+                            📎 <span id="file-label">[ Adjuntar PDF / Imagen ]</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div style="display: flex; gap: 15px; margin-top: 25px;">
+                    <button type="button" class="btn-secondary" style="flex: 1; padding: 10px;">Guardar borrador</button>
+                    <button type="submit" class="btn-primary-block" style="flex: 2; margin-top: 0;">Enviar a Validación</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Mostrar nombre del archivo seleccionado
+        function updateFileName(input) {
+            const label = document.getElementById('file-label');
+            if (input.files && input.files[0]) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = '[ Adjuntar PDF / Imagen ]';
+            }
+        }
+
+        // Alternar el menú desplegable de notificaciones
+        function toggleNotifications() {
+            const dropdown = document.getElementById('notificationsDropdown');
+            if (dropdown) {
+                dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

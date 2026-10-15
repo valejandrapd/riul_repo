@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Acción Restringida</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Feed</span>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 40px 20px; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Modal / Contenedor de Alerta de Acción Restringida -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 550px; width: 100%; text-align: left; padding: 30px;">
+            <div class="form-header-title" style="margin-bottom: 15px;">
+                <h2 style="font-size: 22px; font-weight: bold; margin: 0 0 10px 0;">Acción restringida</h2>
+                <p style="font-size: 13px; color: #444; margin: 0 0 6px 0; line-height: 1.4;">
+                    Debes iniciar sesión con tu correo institucional <strong>@unilibre.edu.co</strong>
+                </p>
+                <p style="font-size: 13px; color: #555; margin: 0; line-height: 1.4;">
+                    Para solicitar vinculación, comentar, reaccionar o inscribirte.
+                </p>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div style="display: flex; gap: 15px; margin-top: 25px;">
+                <a href="{{ url_for('auth.login') }}" class="btn-primary" style="flex: 1; padding: 10px; font-size: 13px; text-decoration: none; text-align: center; background-color: #333; border-color: #333; color: white; font-weight: bold;">Iniciar Sesión / Registrarse</a>
+                <a href="#" class="btn-secondary" style="flex: 1; padding: 10px; font-size: 13px; text-decoration: none; text-align: center;">Cancelar</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

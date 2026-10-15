@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Admin / Rechazar Evidencia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL - Administrador</strong></span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 40px 20px; position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Modal / Contenedor Rechazar Evidencia -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 650px; width: 100%; text-align: left; padding: 30px;">
+            <div class="form-header-title" style="margin-bottom: 8px;">
+                <h2 style="font-size: 22px; font-weight: bold; margin: 0 0 6px 0;">Rechazar Evidencia</h2>
+                <p style="font-size: 13px; color: #666; margin: 0 0 20px 0;">Indica el motivo del rechazo. Se notificará al estudiante.</p>
+            </div>
+
+            <form action="#" method="POST">
+                <!-- Textarea Motivo del Rechazo -->
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <textarea id="motivo_rechazo" name="motivo_rechazo" rows="5" placeholder="[ textarea - motivo del rechazo ]" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; resize: vertical;"></textarea>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" class="btn-secondary" style="flex: 1; padding: 10px; font-size: 13px; text-decoration: none; text-align: center;">Cancelar</a>
+                    <button type="submit" class="btn-secondary" style="flex: 1; padding: 10px; font-size: 13px; font-weight: bold; background-color: #fff; border: 1px solid #ccc; cursor: pointer; color: #b71c1c;">Confirmar Rechazo</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Toast de Notificación (Posicionado en la esquina inferior derecha) -->
+        <div style="position: fixed; bottom: 30px; right: 30px; background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 12px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-size: 13px; display: flex; align-items: center; gap: 10px; z-index: 1000;">
+            <span style="color: #2e7d32; font-weight: bold;">✓</span>
+            <span>Evidencia rechazada. Estudiante notificado.</span>
+        </div>
+    </main>
+</body>
+</html>

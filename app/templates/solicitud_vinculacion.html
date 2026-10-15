@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Solicitud de Vinculación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Catálogo / BioInnovaTech</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Catálogo</a>
+            
+            <!-- Componente de Notificaciones en Partials -->
+            <div class="notification-wrapper">
+                <button class="notification-icon-btn" onclick="toggleNotifications()">🔔</button>
+                {% include 'partials/_notifications.html' %}
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container centered" style="padding: 30px 20px;">
+        <!-- Tarjeta / Modal de Solicitud de Vinculación -->
+        <section class="login-card-box modal-evidence-box" style="max-width: 680px; width: 100%;">
+            <div class="form-header-title">
+                <h2>Solicitud de Vinculación</h2>
+                <p style="font-size: 13px; color: #666; margin-top: 4px;">Enviando solicitud a BioInnovaTech - Docente: Dr. Carlos Mendoza</p>
+            </div>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <!-- Tu información (prellenada) -->
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Tu información (prellenada)</label>
+                    <div style="border: 1px solid #e0e0e0; background: #fafafa; padding: 12px 15px; border-radius: 6px; font-size: 13px; color: #444;">
+                        Nombre • Programa • Semestre • Correo
+                    </div>
+                </div>
+
+                <!-- Carta de Motivación -->
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="carta_motivacion">Carta de Motivación *</label>
+                    <textarea id="carta_motivacion" name="carta_motivacion" rows="5" class="form-select" style="resize: vertical;" placeholder="Describe por qué deseas unirte..." required></textarea>
+                    <div style="display: flex; justify-content: flex-end; font-size: 11px; color: #888; margin-top: 4px;">
+                        <span>0 caracteres - mínimo 100 recomendado</span>
+                    </div>
+                </div>
+
+                <!-- Hoja de Vida o Portafolio -->
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="soporte">Hoja de Vida o Portafolio (opcional)</label>
+                    <div style="border: 1px solid #ccc; border-radius: 6px; padding: 12px; text-align: center; background: #fafafa;">
+                        <input type="file" id="soporte" name="soporte" style="display: none;" onchange="updateFileName(this)">
+                        <label for="soporte" style="cursor: pointer; font-weight: normal; margin: 0; color: #555; font-size: 13px;">
+                            📎 <span id="file-label">[ Selecciona un archivo o arrastra aquí ]</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div style="display: flex; gap: 15px; margin-top: 25px;">
+                    <button type="button" class="btn-secondary" style="flex: 1; padding: 10px;">Cancelar</button>
+                    <button type="submit" class="btn-primary-block" style="flex: 2; margin-top: 0;">Enviar Solicitud de Vinculación</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Mostrar nombre del archivo seleccionado
+        function updateFileName(input) {
+            const label = document.getElementById('file-label');
+            if (input.files && input.files[0]) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = '[ Selecciona un archivo o arrastra aquí ]';
+            }
+        }
+
+        // Alternar el menú desplegable de notificaciones
+        function toggleNotifications() {
+            const dropdown = document.getElementById('notificationsDropdown');
+            if (dropdown) {
+                dropdown.style.display = (dropdown.style.display === 'none' || dropdown.style.display === '') ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

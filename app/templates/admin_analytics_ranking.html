@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Admin / Analytics y Ranking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL - Administrador</strong></span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Título de la Sección -->
+        <section class="content-box" style="margin-bottom: 25px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+            <h1 style="font-size: 22px; margin: 0 0 15px 0;">Analytics y Ranking</h1>
+
+            <!-- Gráfica de Barras: XP Generado por Facultad -->
+            <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; background: #fafafa;">
+                <h3 style="font-size: 16px; margin: 0 0 15px 0; color: #333;">XP Generado por Facultad</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="width: 100px; font-weight: bold;">Facultad 1</span>
+                        <div style="flex: 1; margin: 0 15px; background: #e0e0e0; height: 16px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 85%; background: #333; height: 100%;"></div>
+                        </div>
+                        <span style="font-weight: bold;">4.820 XP</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="width: 100px; font-weight: bold;">Facultad 2</span>
+                        <div style="flex: 1; margin: 0 15px; background: #e0e0e0; height: 16px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 75%; background: #333; height: 100%;"></div>
+                        </div>
+                        <span style="font-weight: bold;">4.820 XP</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="width: 100px; font-weight: bold;">Facultad 3</span>
+                        <div style="flex: 1; margin: 0 15px; background: #e0e0e0; height: 16px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 60%; background: #333; height: 100%;"></div>
+                        </div>
+                        <span style="font-weight: bold;">4.820 XP</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="width: 100px; font-weight: bold;">Facultad 4</span>
+                        <div style="flex: 1; margin: 0 15px; background: #e0e0e0; height: 16px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 45%; background: #333; height: 100%;"></div>
+                        </div>
+                        <span style="font-weight: bold;">4.820 XP</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="width: 100px; font-weight: bold;">Facultad 5</span>
+                        <div style="flex: 1; margin: 0 15px; background: #e0e0e0; height: 16px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 35%; background: #333; height: 100%;"></div>
+                        </div>
+                        <span style="font-weight: bold;">4.820 XP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Ranking -->
+        <section class="content-box" style="margin-bottom: 25px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+            <h3 style="font-size: 18px; margin: 0 0 15px 0;">Ranking</h3>
+
+            <!-- Pestañas de Ranking -->
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <a href="#" class="btn-primary" style="padding: 6px 16px; font-size: 13px; text-decoration: none;">Ranking Estudiantes</a>
+                <a href="#" class="btn-secondary" style="padding: 6px 16px; font-size: 13px; text-decoration: none;">Ranking Semilleros</a>
+            </div>
+
+            <!-- Tabla de Ranking -->
+            <div class="table-responsive">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #e0e0e0; color: #555;">
+                            <th style="padding: 10px; width: 40px;">#</th>
+                            <th style="padding: 10px;">Investigador</th>
+                            <th style="padding: 10px;">Semillero</th>
+                            <th style="padding: 10px;">XP Total</th>
+                            <th style="padding: 10px;">Estrellas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px; font-weight: bold;">1</td>
+                            <td style="padding: 12px 10px;">Nombre</td>
+                            <td style="padding: 12px 10px;">Semillero</td>
+                            <td style="padding: 12px 10px;">2.840</td>
+                            <td style="padding: 12px 10px; color: #fbc02d;">★★★★★</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px; font-weight: bold;">2</td>
+                            <td style="padding: 12px 10px;">Nombre</td>
+                            <td style="padding: 12px 10px;">Semillero</td>
+                            <td style="padding: 12px 10px;">2.840</td>
+                            <td style="padding: 12px 10px; color: #fbc02d;">★★★★★</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px; font-weight: bold;">3</td>
+                            <td style="padding: 12px 10px;">Nombre</td>
+                            <td style="padding: 12px 10px;">Semillero</td>
+                            <td style="padding: 12px 10px;">2.840</td>
+                            <td style="padding: 12px 10px; color: #fbc02d;">★★★★★</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 12px 10px; font-weight: bold;">4</td>
+                            <td style="padding: 12px 10px;">Nombre</td>
+                            <td style="padding: 12px 10px;">Semillero</td>
+                            <td style="padding: 12px 10px;">2.840</td>
+                            <td style="padding: 12px 10px; color: #fbc02d;">★★★★★</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tarjetas de Estadísticas Inferiores -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px; text-align: center;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">Semilleros Activos</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">4</h2>
+            </div>
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px; text-align: center;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">Proyectos en curso</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">183</h2>
+            </div>
+            <div class="content-box" style="padding: 20px; background: #fff; border: 1px solid #d0d0d0; border-radius: 8px; text-align: center;">
+                <p style="font-size: 13px; color: #666; margin: 0 0 6px 0;">Publicaciones 2025</p>
+                <h2 style="font-size: 28px; margin: 0; font-weight: bold;">89</h2>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Mis Semilleros Docente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Mis Semilleros</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-secondary">Publicar en feed</a>
+            <a href="#" class="btn-secondary" style="font-weight: bold;">Mis Semilleros</a>
+            <a href="#" class="btn-secondary" style="color: #b71c1c; border-color: #b71c1c;">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Tarjeta de Cabecera del Semillero -->
+        <section class="semillero-header-card" style="margin-bottom: 20px; border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div class="semillero-logo-box" style="width: 70px; height: 70px; border: 1px solid #ccc; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #fafafa;">[LOGO]</div>
+                <div>
+                    <h1 style="font-size: 22px; margin: 0 0 4px 0;">BioInnovaTech</h1>
+                    <p style="font-size: 13px; color: #555; margin: 0 0 6px 0;">Biotecnología Ambiental • Ingeniería • Categoría A</p>
+                    <p style="font-size: 12px; color: #666; margin: 0;">12 Integrantes • 3 proyectos • 2 publicaciones • 2 solicitudes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pestañas de Navegación Interna -->
+        <div style="display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Información General</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Integrantes (12)</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Proyectos (3)</a>
+            <a href="#" class="btn-secondary" style="padding: 8px 16px; font-size: 13px; text-decoration: none;">Publicaciones (2)</a>
+        </div>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Descripción y Misión/Visión -->
+            <div class="details-left-column" style="display: flex; flex-direction: column; gap: 20px;">
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 10px 0;">Descripción del Semillero</h3>
+                    <p style="font-size: 13px; color: #555; margin: 0;">Descripción pública...</p>
+                </section>
+
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 10px 0;">Misión y Visión</h3>
+                    <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; background: #fafafa; font-size: 13px; color: #444;">
+                        Misión / Visión
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Datos Institucionales y Solicitudes Pendientes -->
+            <div class="details-right-column" style="display: flex; flex-direction: column; gap: 20px;">
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 12px 0;">Datos Institucionales</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #444;">
+                        <li>Campo institucional • <strong>valor</strong></li>
+                        <li>Campo institucional • <strong>valor</strong></li>
+                        <li>Campo institucional • <strong>valor</strong></li>
+                        <li>Campo institucional • <strong>valor</strong></li>
+                        <li>Campo institucional • <strong>valor</strong></li>
+                    </ul>
+                </section>
+
+                <section class="content-box" style="border: 1px solid #d0d0d0; border-radius: 8px; padding: 20px; background: #fff;">
+                    <h3 style="font-size: 16px; margin: 0 0 12px 0; color: #d32f2f;">Solicitudes pendientes: 2</h3>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="#" class="btn-secondary" style="display: inline-block; width: 100%; padding: 10px; font-size: 13px; text-decoration: none; font-weight: bold;">Ver solicitudes &rarr;</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

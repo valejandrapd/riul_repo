@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIUL - Detalle de Proyecto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <!-- Barra de Navegación Superior -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-box">R</span>
+            <span class="brand-title"><strong>RIUL</strong> / Proyectos / Detalle / Navegación /</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#" class="btn-secondary">Mi Perfil</a>
+            <a href="#" class="btn-outline-danger">Salir</a>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Cabecera del Proyecto con Indicador de Avance -->
+        <section class="project-hero-card">
+            <div class="project-hero-info">
+                <div class="badge-group">
+                    <span class="status-badge">[ESTADO]</span> 
+                    <span class="line-badge">[LÍNEA]</span>
+                </div>
+                <h1>Título del Proyecto de Investigación</h1>
+                <p class="hero-desc">Resumen breve del proyecto...</p>
+            </div>
+            <div class="progress-box">
+                <h2>67%</h2>
+                <p>Avance del proyecto</p>
+            </div>
+        </section>
+
+        <!-- Contenido en Dos Columnas -->
+        <div class="details-grid-layout">
+            <!-- Columna Izquierda: Cronograma y Descripción Extendida -->
+            <div class="details-left-column">
+                <!-- Cronograma de Hitos -->
+                <section class="content-box">
+                    <h3>Cronograma de Hitos</h3>
+                    <ul class="milestone-list">
+                        <li><span>● Hito del proyecto</span> <span class="milestone-date">Fecha</span></li>
+                        <li><span>● Hito del proyecto</span> <span class="milestone-date">Fecha</span></li>
+                        <li><span>● Hito del proyecto</span> <span class="milestone-date">Fecha</span></li>
+                        <li><span>○ Hito del proyecto</span> <span class="milestone-date">Fecha</span></li>
+                        <li><span>○ Hito del proyecto</span> <span class="milestone-date">Fecha</span></li>
+                        <li><span>○ Hito del proyecto</span> <span class="milestone-date">Fecha</span></li>
+                    </ul>
+                </section>
+
+                <!-- Descripción Extendida -->
+                <section class="content-box">
+                    <h3>Descripción Extendida</h3>
+                    <p class="box-text">Descripción metodológica, objetivos y resultados esperados.</p>
+                </section>
+            </div>
+
+            <!-- Columna Derecha: Información General y Equipo -->
+            <div class="details-right-column">
+                <!-- Información General -->
+                <section class="content-box">
+                    <h3>Información General</h3>
+                    <ul class="info-list">
+                        <li><strong>Estado</strong> [valor]</li>
+                        <li><strong>Línea</strong> [valor]</li>
+                        <li><strong>Inicio</strong> [valor]</li>
+                        <li><strong>Cierre</strong> [valor]</li>
+                        <li><strong>Financiación</strong> [valor]</li>
+                    </ul>
+                </section>
+
+                <!-- Equipo del Proyecto -->
+                <section class="content-box">
+                    <h3>Equipo del Proyecto</h3>
+                    <ul class="team-list">
+                        <li>○ Nombre - Rol</li>
+                        <li>○ Nombre - Rol</li>
+                        <li>○ Nombre - Rol</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
